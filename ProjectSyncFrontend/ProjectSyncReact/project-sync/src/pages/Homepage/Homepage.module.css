@@ -1,0 +1,70 @@
+*{
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #2b2b2b, #1a1a1a);
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.title {
+  font-size: 4em;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(100, 108, 255, 0.6),
+               0 0 30px rgba(100, 108, 255, 0.2);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.button {
+  padding: 0.9em 2.2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #5b5eff, #7d83ff);
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(100, 108, 255, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1.8s ease forwards 0.5s;
+}
+
+.button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 25px rgba(100, 108, 255, 0.6);
+  background: linear-gradient(90deg, #7075ff, #9a9eff);
+}
+
+
+
+/* ANIMACIJE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(100,108,255,0.5), 0 0 20px rgba(100,108,255,0.2); }
+  to { text-shadow: 0 0 25px rgba(100,108,255,0.9), 0 0 45px rgba(100,108,255,0.4); }
+}

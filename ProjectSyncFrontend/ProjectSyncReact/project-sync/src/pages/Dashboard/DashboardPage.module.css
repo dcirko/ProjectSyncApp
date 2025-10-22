@@ -1,0 +1,80 @@
+.container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2b2b2b, #1a1a1a);
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #183de5;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  border-bottom: 2px solid #183de5;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.projectCard {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.projectName {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #183de5;
+}
+
+.projectInfo {
+  margin: 0.3rem 0;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #ffd166;
+  text-decoration: underline;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #ddd;
+  font-size: 1.1rem;
+}
