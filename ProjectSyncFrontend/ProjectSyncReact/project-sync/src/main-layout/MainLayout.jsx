@@ -45,12 +45,12 @@ const MainLayout = () => {
     return (
         <div className={st.main}>
             <nav className={st.nav}>
-                <h1 className={st.logo}>ProjectSync</h1>
+                <h1 ><NavLink className={st.logo} to="/dashboard">ProjectSync</NavLink></h1>
                 <ul className={st.navList}>
                     <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                     <li><NavLink to="/projects">Projects</NavLink></li>
-                    <li><NavLink to="/team">Team</NavLink></li>
-                    <li><NavLink to="/profile">{user.name} {user.surname}</NavLink></li>
+                    <li><NavLink to="/teams">Team</NavLink></li>
+                    <li><NavLink to={`/myProfile/${user.id}`}>{user.name} {user.surname}</NavLink></li>
                     {user.role === 'ADMIN' && <li><NavLink to="/admin">Admin</NavLink></li>}
 
                 </ul>
