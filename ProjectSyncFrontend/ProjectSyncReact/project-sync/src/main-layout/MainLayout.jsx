@@ -25,7 +25,7 @@ const MainLayout = () => {
         .catch(error => console.error('Error fetching user data:', error));
     }, []);
 
-    console.log(user);
+    //console.log(user);
     function logoutButton(){
         try {
             logout();

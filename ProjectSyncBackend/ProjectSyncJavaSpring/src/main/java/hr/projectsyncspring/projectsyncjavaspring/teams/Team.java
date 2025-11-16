@@ -3,9 +3,7 @@ package hr.projectsyncspring.projectsyncjavaspring.teams;
 import hr.projectsyncspring.projectsyncjavaspring.auth.authDomain.MyUser;
 import hr.projectsyncspring.projectsyncjavaspring.projects.Project;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -14,7 +12,10 @@ import java.util.Set;
 @Entity
 @Table(name = "teams")
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString(exclude = {"projects", "members"})
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 public class Team {
     @Id
@@ -27,7 +28,7 @@ public class Team {
     private MyUser createdBy;
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
     private Set<Project> projects = new HashSet<>();
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<TeamMember> members = new HashSet<>();
     @Column(updatable = false)
     private LocalDateTime createdAt;

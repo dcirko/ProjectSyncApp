@@ -40,7 +40,11 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/user/getCurrentUser", "/api/project/getTwoNewestProjectsByUserId/{userId}", "/api/tasks/getTwoNewestTasksByUserId/{userId}").authenticated())
+                        .requestMatchers("/api/user/getCurrentUser", "/api/project/getTwoNewestProjectsByUserId/{userId}",
+                                "/api/tasks/getTwoNewestTasksByUserId/{userId}", "/api/teams/get2NewestTeamsByUserId/{userId}",
+                                "/api/user/getProfile/{userId}", "/api/user/isAdmin", "/api/teams/getAllTeamsByUserId/{userId}").authenticated()
+                        .requestMatchers("/api/user/getAllUsersForAdmin", "/api/teams/addNewTeam", "/api/teams/getAllTeamsForAdmin"
+                                , "/api/teams/addNewMember").hasRole("ADMIN"))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();

@@ -16,7 +16,7 @@ public class ProjectServiceImpl implements ProjectService{
         return projectRepository.findTop2ByTeamMembersUserIdOrderByCreatedAtDesc(userId).stream().map(this::projectToResponseDTO).toList();
     }
 
-    private ProjectResponseDTO projectToResponseDTO(Project project) {
+    public ProjectResponseDTO projectToResponseDTO(Project project) {
         ProjectResponseDTO projectResponseDTO = new ProjectResponseDTO();
         projectResponseDTO.setId(project.getId());
         projectResponseDTO.setName(project.getName());

@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @Data
@@ -20,6 +21,6 @@ public class TeamRequestDTO {
     private String description;
     @NotNull(message = "Created by ID is required")
     private Long createdById;
-    private List<Long> projectsIds;
-    private List<Long> membersIds;
+    private Set<Long> projectsIds;
+    private Set<Long> membersIds;
 }

@@ -29,6 +29,8 @@ const RegisterPage = () => {
     e.preventDefault();
     if(regForma.confirmPassword != regForma.password){
       seterror('Passwords do not match!');
+    }else if(regForma.password.length < 8){
+      seterror('Passwords has to be 8 characters or more!');
     }else{
       const {confirmPassword, ...userRegisterData} = regForma;
       console.log(userRegisterData);

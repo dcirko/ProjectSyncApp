@@ -9,7 +9,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/tasks")
 @AllArgsConstructor
-public class TasksController {
+public class TaskController {
     private TaskService taskService;
 
     @GetMapping("/getTwoNewestTasksByUserId/{userId}")
